@@ -129,6 +129,27 @@
     </entry>
     
     <entry>
+      <title><![CDATA[项目中遇到的技术问题]]></title>
+      <url>http://blog.chanroc.top/2016/02/28/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h2 id="json序列化问题-2016-10-10"><a href="#json序列化问题-2016-10-10" class="headerlink" title="json序列化问题 (2016.10.10)"></a>json序列化问题 (2016.10.10)</h2><blockquote>
+<p>entity 实体<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@OneToOne</span></div><div class="line">	<span class="meta">@JoinColumn</span>(name = <span class="string">"USER_ID"</span>, updatable = <span class="keyword">false</span>, insertable = <span class="keyword">false</span>)</div><div class="line">	<span class="keyword">private</span> PlanUserVo userVo;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><p>question：<code>Could not write content: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) )</code></p>
+</li>
+<li><p>answer:</p>
+</li>
+<li>1、@JsonIgnoreProperties({“hibernateLazyInitializer”, “handler”})</li>
+<li>2、在配置文件中加 <code>spring.jackson.serialization.fail-on-empty-beans=false</code>ls</li>
+<li>3、修改关联方式为fetch. EAGER(good solution I mean not just change fetch type to EAGER)</li>
+</ul>
+<h2 id="NamedEntityGraph-使用（2016-10-20）"><a href="#NamedEntityGraph-使用（2016-10-20）" class="headerlink" title="@NamedEntityGraph 使用（2016.10.20）"></a>@NamedEntityGraph 使用（2016.10.20）</h2><p>问题：当三个attributeNodes出现时候，出现异常，<code>cannot simultaneously fetch multiple bags</code>意思就是不能同时获取多个包</p>
+<p>解决方法<br>将这个List改为Set接收数据就OK了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@OrderBy</span>(value = <span class="string">"id ASC "</span>)</div><div class="line">	<span class="meta">@OneToMany</span>(cascade = CascadeType.ALL, orphanRemoval = <span class="keyword">true</span>)</div><div class="line">	<span class="meta">@JoinTable</span>(name = <span class="string">"SYS_AWARD_SET_RULE"</span>,</div><div class="line">					joinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"SYS_AWARD_ID"</span>),</div><div class="line">					inverseJoinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"RULE_ID"</span>))</div><div class="line">	<span class="keyword">private</span> Set&lt;RewardPunishRule&gt; rewardPunishRules;<span class="comment">//奖罚规则</span></div><div class="line"></div><div class="line">	<span class="meta">@OneToMany</span>(cascade = CascadeType.ALL, orphanRemoval = <span class="keyword">true</span>)</div><div class="line">	<span class="meta">@JoinTable</span>(name = <span class="string">"SYS_AWARD_SET_GROUP"</span>,</div><div class="line">					joinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"SYS_AWARD_ID"</span>),</div><div class="line">					inverseJoinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"GROUPING_ID"</span>))</div><div class="line">	<span class="keyword">private</span> Set&lt;GroupNumber&gt; groupNumbers; <span class="comment">//人员分组设置</span></div></pre></td></tr></table></figure></p>
+<p>alias cnpm=”npm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a> \<br>–cache=$HOME/.npm/.cache/cnpm \<br>–disturl=<a href="https://npm.taobao.org/dist" target="_blank" rel="external">https://npm.taobao.org/dist</a> \<br>–userconfig=$HOME/.cnpmrc”</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于Spring MVC POST请求 @RequestBody]]></title>
       <url>http://blog.chanroc.top/2016/02/28/%E5%85%B3%E4%BA%8ESpring%20MVC%20POST%E8%AF%B7%E6%B1%82%20@RequestBody/</url>
       <content type="html"><![CDATA[<h1 id="关于Spring-MVC-POST请求-RequestBody"><a href="#关于Spring-MVC-POST请求-RequestBody" class="headerlink" title="关于Spring MVC POST请求 @RequestBody"></a>关于Spring MVC POST请求 @RequestBody</h1><p>在使用Spring MVC 时Ajax发送post请求：<br>本来是要接受一个实体类，但是数据结构比较复杂；自己搞了快一天才弄明白<br><strong>重点：</strong> 在js中json格式要转换成字符串的json格式接受才行 <code>jsonStr = JSON.stringify(jsonStr);</code></p>
@@ -155,27 +176,6 @@
 </li>
 </ul>
 <p>决绝办法是就是使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsonStr = <span class="built_in">JSON</span>.stringify(jsonStr);</div></pre></td></tr></table></figure></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[项目中遇到的技术问题]]></title>
-      <url>http://blog.chanroc.top/2016/02/28/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<h2 id="json序列化问题-2016-10-10"><a href="#json序列化问题-2016-10-10" class="headerlink" title="json序列化问题 (2016.10.10)"></a>json序列化问题 (2016.10.10)</h2><blockquote>
-<p>entity 实体<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@OneToOne</span></div><div class="line">	<span class="meta">@JoinColumn</span>(name = <span class="string">"USER_ID"</span>, updatable = <span class="keyword">false</span>, insertable = <span class="keyword">false</span>)</div><div class="line">	<span class="keyword">private</span> PlanUserVo userVo;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li><p>question：<code>Could not write content: No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) )</code></p>
-</li>
-<li><p>answer:</p>
-</li>
-<li>1、@JsonIgnoreProperties({“hibernateLazyInitializer”, “handler”})</li>
-<li>2、在配置文件中加 <code>spring.jackson.serialization.fail-on-empty-beans=false</code>ls</li>
-<li>3、修改关联方式为fetch. EAGER(good solution I mean not just change fetch type to EAGER)</li>
-</ul>
-<h2 id="NamedEntityGraph-使用（2016-10-20）"><a href="#NamedEntityGraph-使用（2016-10-20）" class="headerlink" title="@NamedEntityGraph 使用（2016.10.20）"></a>@NamedEntityGraph 使用（2016.10.20）</h2><p>问题：当三个attributeNodes出现时候，出现异常，<code>cannot simultaneously fetch multiple bags</code>意思就是不能同时获取多个包</p>
-<p>解决方法<br>将这个List改为Set接收数据就OK了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@OrderBy</span>(value = <span class="string">"id ASC "</span>)</div><div class="line">	<span class="meta">@OneToMany</span>(cascade = CascadeType.ALL, orphanRemoval = <span class="keyword">true</span>)</div><div class="line">	<span class="meta">@JoinTable</span>(name = <span class="string">"SYS_AWARD_SET_RULE"</span>,</div><div class="line">					joinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"SYS_AWARD_ID"</span>),</div><div class="line">					inverseJoinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"RULE_ID"</span>))</div><div class="line">	<span class="keyword">private</span> Set&lt;RewardPunishRule&gt; rewardPunishRules;<span class="comment">//奖罚规则</span></div><div class="line"></div><div class="line">	<span class="meta">@OneToMany</span>(cascade = CascadeType.ALL, orphanRemoval = <span class="keyword">true</span>)</div><div class="line">	<span class="meta">@JoinTable</span>(name = <span class="string">"SYS_AWARD_SET_GROUP"</span>,</div><div class="line">					joinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"SYS_AWARD_ID"</span>),</div><div class="line">					inverseJoinColumns = <span class="meta">@JoinColumn</span>(name = <span class="string">"GROUPING_ID"</span>))</div><div class="line">	<span class="keyword">private</span> Set&lt;GroupNumber&gt; groupNumbers; <span class="comment">//人员分组设置</span></div></pre></td></tr></table></figure></p>
-<p>alias cnpm=”npm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a> \<br>–cache=$HOME/.npm/.cache/cnpm \<br>–disturl=<a href="https://npm.taobao.org/dist" target="_blank" rel="external">https://npm.taobao.org/dist</a> \<br>–userconfig=$HOME/.cnpmrc”</p>
 ]]></content>
     </entry>
     
