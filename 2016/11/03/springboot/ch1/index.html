@@ -7,15 +7,15 @@
 
     
 
-    <title>关于Spring MVC POST请求 @RequestBody | Roc</title>
-    <meta name="author" content="Chen Roc">
+    <title>Spring Boot实战--（一）Spring项目的快速搭建 | Roc</title>
+    <meta name="author" content="Roc Chen">
     
-    <meta name="description" content="你敲下的每一行代码，都是你渴望成功的标志">
+    <meta name="description" content="使用maven的pom快速搭建项目">
     
-    
+    <meta name="keywords" content="spring,pom">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="关于Spring MVC POST请求 @RequestBody"/>
+    <meta property="og:title" content="Spring Boot实战--（一）Spring项目的快速搭建"/>
     <meta property="og:site_name" content="ChanRoc"/>
 
     
@@ -171,16 +171,8 @@
             
 
             <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/Java/">
-                    Java <span class="right">1 篇</span></a>
-                </a>
-            </li>
-
-        
-
-            <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/Java/JavaScript/">
-                    JavaScript <span class="right">1 篇</span></a>
+                <a class="no-padding" href="/categories/杂谈/">
+                    杂谈 <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -195,8 +187,24 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/杂谈/">
-                    杂谈 <span class="right">1 篇</span></a>
+                <a class="no-padding" href="/categories/Java/">
+                    Java <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/Java/JavaScript/">
+                    JavaScript <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/Java/Spring/">
+                    Spring <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -232,7 +240,7 @@
             
     
     
-    <a class="breadcrumb" href="/categories/Java/">Java</a><a class="breadcrumb" href="/categories/Java/JavaScript/">JavaScript</a>
+    <a class="breadcrumb" href="/categories/Java/">Java</a><a class="breadcrumb" href="/categories/Java/Spring/">Spring</a>
 
 
         
@@ -249,55 +257,125 @@
             <div class="article-title">
                 
     
-        <h1>关于Spring MVC POST请求 @RequestBody</h1>
+        <h1>Spring Boot实战--（一）Spring项目的快速搭建</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2016-02-28T09:58:27.000Z"><a href="/2016/02/28/关于Spring MVC POST请求 @RequestBody/">2016-02-28</a></time>
+            <time class="pink-link-context" datetime="2016-11-03T06:57:00.000Z"><a href="/2016/11/03/springboot/ch1/">2016-11-03</a></time>
 
             
     <div class="tags-row">
         
-            <a href="/tags/Spring-MVC/" class="chip pink lighten-1">Spring MVC</a>
+            <a href="/tags/spring/" class="chip pink lighten-1">spring</a>
         
-            <a href="/tags/POST请求/" class="chip pink lighten-1">POST请求</a>
-        
-            <a href="/tags/AJAX/" class="chip pink lighten-1">AJAX</a>
+            <a href="/tags/maven/" class="chip pink lighten-1">maven</a>
         
     </div>
 
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#关于Spring-MVC-POST请求-RequestBody"><span class="section table-of-contents-text">关于Spring MVC POST请求 @RequestBody</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#经过"><span class="section table-of-contents-text">经过</span></a></li></ol></li></ol>
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#Spring项目的快速搭建"><span class="section table-of-contents-text">Spring项目的快速搭建</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Maven-的简介"><span class="section table-of-contents-text">Maven 的简介</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Maven的安装"><span class="section table-of-contents-text">Maven的安装</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Maven-的pom-xml"><span class="section table-of-contents-text">Maven 的pom.xml</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Spring-项目的搭建"><span class="section table-of-contents-text">Spring 项目的搭建</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Spring基本配置"><span class="section table-of-contents-text">Spring基本配置</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#依赖注入"><span class="section table-of-contents-text">依赖注入</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#代码演示"><span class="section table-of-contents-text">代码演示</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#Java-配置"><span class="section table-of-contents-text">Java 配置</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#描述"><span class="section table-of-contents-text">描述</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#代码演示-1"><span class="section table-of-contents-text">代码演示</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#AOP"><span class="section table-of-contents-text">AOP</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#代码演示-2"><span class="section table-of-contents-text">代码演示</span></a></li></ol></li></ol></li></ol></li></ol>
 </div>
 
 
             <div class="entry pink-link-context">
-                <h1 id="关于Spring-MVC-POST请求-RequestBody"><a href="#关于Spring-MVC-POST请求-RequestBody" class="headerlink" title="关于Spring MVC POST请求 @RequestBody"></a>关于Spring MVC POST请求 @RequestBody</h1><p>在使用Spring MVC 时Ajax发送post请求：<br>本来是要接受一个实体类，但是数据结构比较复杂；自己搞了快一天才弄明白<br><strong>重点：</strong> 在js中json格式要转换成字符串的json格式接受才行 <code>jsonStr = JSON.stringify(jsonStr);</code></p>
+                <h1 id="Spring项目的快速搭建"><a href="#Spring项目的快速搭建" class="headerlink" title="Spring项目的快速搭建"></a>Spring项目的快速搭建</h1><h2 id="Maven-的简介"><a href="#Maven-的简介" class="headerlink" title="Maven 的简介"></a>Maven 的简介</h2><blockquote>
+<p>Apache Maven 是一个软件项目管理工具。基于项目对象模型（Project Object Model，POM）的概念，Maven可以用来管理项目的依赖，编译，文档等信息。</p>
+</blockquote>
+<h2 id="Maven的安装"><a href="#Maven的安装" class="headerlink" title="Maven的安装"></a>Maven的安装</h2><p>略</p>
+<h2 id="Maven-的pom-xml"><a href="#Maven-的pom-xml" class="headerlink" title="Maven 的pom.xml"></a>Maven 的pom.xml</h2><ul>
+<li><p>dependencies</p>
 <blockquote>
-<p>实体类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Id</span></div><div class="line"><span class="meta">@GenericGenerator</span>(name = <span class="string">"idgen"</span>, strategy = <span class="string">"increment"</span>)</div><div class="line"><span class="meta">@GeneratedValue</span>(generator = <span class="string">"idgen"</span>)</div><div class="line"><span class="keyword">private</span> Long achieveId; <span class="comment">// 主键</span></div><div class="line"><span class="meta">@OneToOne</span></div><div class="line"><span class="meta">@JoinColumn</span>(name = <span class="string">"MACHINE_TYPE"</span>, updatable = <span class="keyword">false</span>, insertable = <span class="keyword">false</span>)</div><div class="line"><span class="keyword">private</span> MachineType machineType; <span class="comment">// 机型类别</span></div><div class="line"><span class="meta">@Column</span>(name = <span class="string">"MACHINE_TYPE"</span>)</div><div class="line"><span class="keyword">private</span> String machineTypeId; <span class="comment">// 机型类别</span></div><div class="line"><span class="meta">@OneToOne</span></div><div class="line"><span class="meta">@JoinColumn</span>(name = <span class="string">"BRAND_ID"</span>, updatable = <span class="keyword">false</span>, insertable = <span class="keyword">false</span>)</div><div class="line"><span class="keyword">private</span> Brand brand; <span class="comment">// 品牌ID</span></div><div class="line"><span class="meta">@Column</span>(name = <span class="string">"BRAND_ID"</span>)</div><div class="line"><span class="keyword">private</span> String brandId; <span class="comment">// 品牌ID</span></div><div class="line"><span class="meta">@OneToOne</span></div><div class="line"><span class="meta">@JoinColumn</span>(name = <span class="string">"GOOD_ID"</span>, updatable = <span class="keyword">false</span>, insertable = <span class="keyword">false</span>)</div><div class="line"><span class="keyword">private</span> Goods good; <span class="comment">// 型号ID</span></div><div class="line"><span class="meta">@Column</span>(name = <span class="string">"GOOD_ID"</span>)</div><div class="line"><span class="keyword">private</span> String goodId; <span class="comment">// 型号ID</span></div><div class="line"><span class="keyword">private</span> Integer numberFirst; <span class="comment">// 任务量一</span></div><div class="line"><span class="keyword">private</span> Integer numberSecond; <span class="comment">// 任务量2</span></div><div class="line"><span class="keyword">private</span> Integer numberThird; <span class="comment">// 任务量3</span></div><div class="line"><span class="keyword">private</span> Date startDate; <span class="comment">// 开始日期</span></div><div class="line"><span class="keyword">private</span> Date endDate; <span class="comment">// 结束日期</span></div><div class="line"><span class="keyword">private</span> Date issuingDate; <span class="comment">// 提成发放日期</span></div><div class="line"><span class="keyword">private</span> String auditor; <span class="comment">// 审核人</span></div><div class="line"><span class="keyword">private</span> String remark; <span class="comment">// 备注</span></div><div class="line"><span class="keyword">private</span> Date createDate; <span class="comment">// 创建日期</span></div><div class="line"><span class="meta">@Enumerated</span>(EnumType.STRING)</div><div class="line"><span class="keyword">private</span> FlagEnum flag = FlagEnum.NORMAL; <span class="comment">// 是否删除：normal-正常，del-删除</span></div><div class="line"><span class="meta">@Enumerated</span>(EnumType.STRING)</div><div class="line"><span class="keyword">private</span> AchieveStatusEnum status = AchieveStatusEnum.WAIT; <span class="comment">// 审核状态：BACK-驳回，WAIT-待审核，OVER-已审核</span></div><div class="line"><span class="keyword">private</span> String planId;</div><div class="line"></div><div class="line"><span class="meta">@OneToMany</span>(cascade=CascadeType.ALL)</div><div class="line"><span class="meta">@JoinTable</span>(name=<span class="string">"SYS_ACHIEVE_SET_RULE"</span>,</div><div class="line">   joinColumns=<span class="meta">@JoinColumn</span>(name=<span class="string">"SYS_ACHIEVE_ID"</span>),</div><div class="line">   inverseJoinColumns=<span class="meta">@JoinColumn</span>(name=<span class="string">"RULE_ID"</span>))</div><div class="line"><span class="keyword">private</span> List&lt;RewardPunishRule&gt; rewardPunishRules;<span class="comment">//奖罚规则</span></div><div class="line"></div><div class="line"><span class="meta">@OneToMany</span>(cascade=CascadeType.ALL)</div><div class="line"><span class="meta">@JoinTable</span>(name=<span class="string">"SYS_ACHIEVE_SET_GROUP"</span>,</div><div class="line">    joinColumns=<span class="meta">@JoinColumn</span>(name=<span class="string">"SYS_ACHIEVE_ID"</span>),</div><div class="line">    inverseJoinColumns=<span class="meta">@JoinColumn</span>(name=<span class="string">"GROUPING_ID"</span>))</div><div class="line"><span class="keyword">private</span> List&lt;GroupNumber&gt; groupNumbers; <span class="comment">//人员分组设置</span></div></pre></td></tr></table></figure></p>
-<p>controller<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">""</span>, method = RequestMethod.POST)</div><div class="line"><span class="meta">@ResponseBody</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">addAchieve</span><span class="params">(@RequestBody Achieve achieve)</span> </span>&#123;</div><div class="line">  String result = <span class="string">""</span>;</div><div class="line">  System.out.println(achieve);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>js-Ajax</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- dependency</div><div class="line">	&gt; ``` &lt;dependency&gt;&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<p>内不通过groupId、artifactId、version确定唯一的依赖</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSubmit</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="comment">//	var jsonStr = $("#achieveForm").serialize();</span></div><div class="line"><span class="comment">//拼凑数据格式</span></div><div class="line">	<span class="keyword">var</span> jsonStr = &#123;</div><div class="line">		<span class="string">'planId'</span>: $(<span class="string">"#achieveForm input[name='planId']"</span>).val(),</div><div class="line">		<span class="string">'machineTypeId'</span> : $(<span class="string">"#achieveForm input[name='machineType']"</span>).val(),</div><div class="line">		<span class="string">'brandId'</span> : $(<span class="string">"#achieveForm .J_brand"</span>).val(),</div><div class="line">		<span class="string">'goodId'</span> : $(<span class="string">"#goodList"</span>).val()</div><div class="line">	&#125;;</div><div class="line"><span class="comment">//============需要转换成字符串的json格式传递参数==============================</span></div><div class="line">	jsonStr = <span class="built_in">JSON</span>.stringify(jsonStr);</div><div class="line"><span class="comment">//=================================</span></div><div class="line"><span class="comment">//	console.log("jsonStr:\r\n" + JSON.stringify(jsonStr));</span></div><div class="line">	<span class="comment">// alert(jsonStr);</span></div><div class="line">	$.ajax(&#123;</div><div class="line">		<span class="attr">url</span> : <span class="string">"/achieve"</span>,</div><div class="line">		<span class="attr">type</span> : <span class="string">"POST"</span>,</div><div class="line">		<span class="attr">contentType</span> : <span class="string">'application/json;charset=utf-8'</span>, <span class="comment">// 设置请求头信息</span></div><div class="line">		dataType : <span class="string">"json"</span>,</div><div class="line">		<span class="attr">data</span> : jsonStr,</div><div class="line">		<span class="attr">success</span> : <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">			alert(data);</div><div class="line">		&#125;,</div><div class="line">		<span class="attr">error</span> : <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">			alert(res.responseText);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="经过"><a href="#经过" class="headerlink" title="经过"></a>经过</h2><blockquote>
-<p>js 缺少一下代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//============需要转换成字符串的json格式传递参数==============================</span></div><div class="line">	jsonStr = <span class="built_in">JSON</span>.stringify(jsonStr);</div><div class="line"><span class="comment">//=================================</span></div></pre></td></tr></table></figure></p>
+</li>
+<li><p>查询地址：<a href="http://mvnrepository.com/" target="_blank" rel="external">http://mvnrepository.com/</a></p>
+<blockquote>
+<p>可以查询对应jar包的 maven pom</p>
 </blockquote>
-<ul>
-<li><p>使用map接受数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">""</span>, method = RequestMethod.POST)</div><div class="line"><span class="meta">@ResponseBody</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">addAchieve</span><span class="params">(@RequestBody Map&lt;String, Object&gt; achieve)</span> </span>&#123;</div><div class="line">  String result = <span class="string">""</span>;</div><div class="line">  System.out.println(achieve);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>使用JSONObject接受数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">""</span>, method = RequestMethod.POST)</div><div class="line"><span class="meta">@ResponseBody</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">addAchieve</span><span class="params">(@RequestBody JSONObject achieve)</span> </span>&#123;</div><div class="line">  String result = <span class="string">""</span>;</div><div class="line">  System.out.println(achieve);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>具体结构</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span> <span class="comment">&lt;!-- 组织唯一标识--&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span><span class="comment">&lt;!-- 项目唯一标识--&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span><span class="comment">&lt;!--项目的版本--&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p>异常信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[http-nio-8080-exec-9] o.s.w.s.m.s.DefaultHandlerExceptionResolver - Failed to read HTTP message: org.springframework.http.converter.HttpMessageNotReadableException: Could not read document: Unrecognized token &apos;planId&apos;: was expecting (&apos;true&apos;, &apos;false&apos; or &apos;null&apos;)</div></pre></td></tr></table></figure>
+<li><p>定义变量</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p>从chrome 的Postman 发送是可以的我就觉得我的数据格式有问题</p>
+<li><p>编译插件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">              <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">              <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>决绝办法是就是使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsonStr = <span class="built_in">JSON</span>.stringify(jsonStr);</div></pre></td></tr></table></figure></p>
+<h2 id="Spring-项目的搭建"><a href="#Spring-项目的搭建" class="headerlink" title="Spring 项目的搭建"></a>Spring 项目的搭建</h2><blockquote>
+<p>基于IntelliJ IDEA搭建</p>
+<ul>
+<li>新建Maven项目。单击File-new-Project-Maven<br><img src="http://source.chanroc.top/image/ch1.di/new-project.png" alt="enter image description here"></li>
+<li>选择maven<br><img src="http://source.chanroc.top/image/ch1.di/new-peroject-maven.png" alt="enter image description here"></li>
+<li>输入坐标值</li>
+<li>选择存储路径<br><img src="http://source.chanroc.top/image/ch1.di/new-project-3.png" alt="enter image description here"><br><img src="http://source.chanroc.top/image/ch1.di/new-project-4.png" alt="enter image description here"></li>
+<li>修改pom.xml文件</li>
+</ul>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line">	<span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></div><div class="line">		         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">		         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">	<span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></div><div class="line">		</div><div class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.chanroc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springboot<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">		</div><div class="line">		    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></div><div class="line">		        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></div><div class="line">		    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></div><div class="line">		    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">		        <span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;</span></div><div class="line">		        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">		        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">		    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line">		</div><div class="line">		    <span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">		        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></div><div class="line">		            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">		                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div><div class="line">		        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></div><div class="line">		    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">project</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Spring基本配置"><a href="#Spring基本配置" class="headerlink" title="Spring基本配置"></a>Spring基本配置</h2><p>Spring框架四大原则：</p>
+<ol>
+<li>使用POJO经轻量级和最小入侵式开发。</li>
+<li>通过依赖注入和基于接口编程实现松耦合。</li>
+<li>AOP和默认习惯进行声明式编程</li>
+<li>使用AOP合模班减少模式化代码</li>
+</ol>
+<h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><blockquote>
+<ul>
+<li>控制反转（IOC）和依赖注入在spring环境下是等同的概念，前者是通过后者实现的。</li>
+<li>依赖注入：容器负责创建对象和维护对象间的依赖关系，而非对象本身。</li>
+<li><code>目的</code>：解耦</li>
+<li>Spring IOC容器 负责创建Bean，通过容器将功能Bean注入到需要的Bean中。方式：xml，注解，Java配置、groovy配置实现Bean的创建和注入</li>
+<li>元数据：描述数据的数据。xml配置，注解，Java配置称为配置元数据。</li>
+</ul>
+</blockquote>
+<ul>
+<li>声明Bean的注解：<ul>
+<li>@Component组件，无明确的角色</li>
+<li>@Service 在业务逻辑层使用</li>
+<li>@Repository 在数据访问层使用</li>
+<li>@Controller 在展现层使用（MVC）</li>
+</ul>
+</li>
+<li>注入Bean的注解：<ul>
+<li>@Autowired：Spring提供注解</li>
+<li>@Inject：JSR-330提供注解</li>
+<li>@Resource ：JSR-250提供注解</li>
+</ul>
+</li>
+</ul>
+<h4 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a><a href="https://github.com/ChenGuop/springboot" target="_blank" rel="external">代码演示</a></h4><ul>
+<li><a href="https://github.com/ChenGuop/springboot/tree/master/src/main/java/com/chanroc/springboot/ch1/di" target="_blank" rel="external">具体代码位置</a></li>
+</ul>
+<h3 id="Java-配置"><a href="#Java-配置" class="headerlink" title="Java 配置"></a>Java 配置</h3><h4 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h4><blockquote>
+<p>java配置是Spring4.x推荐的配置方式，可以完全代替xml配置；也是Spring Boot推荐的配置方式。<br>Java配置通过@Configuration和@Bean来实现</p>
+<ul>
+<li>@Configuration 声明当前类是一个配置类</li>
+<li>@Bean注解子啊方法上，声明当前方法的返回值为一个Bean。<br>配置的原则：全局配置使用Java配置（数据库，MVC配置），业务Bean使用注解配置(@Service，@Component，@Repository，@Controller)</li>
+</ul>
+</blockquote>
+<h4 id="代码演示-1"><a href="#代码演示-1" class="headerlink" title="代码演示"></a><a href="https://github.com/ChenGuop/springboot/tree/master/src/main/java/com/chanroc/springboot/ch1/javaconfig" target="_blank" rel="external">代码演示</a></h4><h3 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h3><blockquote>
+<ul>
+<li>AOP: 面向切面编程，相对于OOP面向对象编程</li>
+<li>目的：解耦。在oop中智能通过继承和实现接口，阻碍更多的行为添加到一组类上，AOP弥补了OOP的不足。</li>
+</ul>
+</blockquote>
+<ul>
+<li>Spring支持AspectJ的注解式切面编程：<ol>
+<li>使用@Aspect声明是一个切面。</li>
+<li>使用@After、@Before、@Around 定义建言（advice），可直接将拦截规则（切点）作为参数。</li>
+<li>@After、@Before、@Around 参数的拦截规则为切点（PointCut），为了使切点复用使用@PointCut 专门定义。</li>
+<li>其中符合条件的每一个被拦截处为连接点（JoinPoint）。</li>
+</ol>
+</li>
+</ul>
+<h4 id="代码演示-2"><a href="#代码演示-2" class="headerlink" title="代码演示"></a><a href="https://github.com/ChenGuop/springboot/tree/master/src/main/java/com/chanroc/springboot/ch1/aop" target="_blank" rel="external">代码演示</a></h4><ul>
+<li>示例将基于注解拦截和基本方法规则拦截两种方式。模拟记录操作日志系统的实现。</li>
+</ul>
 
             </div>
         </div>
@@ -311,7 +389,7 @@
         <div class="card">
             <div class="card-content">
                 <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="2016/02/28/关于Spring MVC POST请求 @RequestBody/" data-title="关于Spring MVC POST请求 @RequestBody" data-url="http://blog.chanroc.top/2016/02/28/关于Spring MVC POST请求 @RequestBody/"></div>
+                <div class="ds-thread" data-thread-key="2016/11/03/springboot/ch1/" data-title="Spring Boot实战--（一）Spring项目的快速搭建" data-url="http://blog.chanroc.top/2016/11/03/springboot/ch1/"></div>
 
                 <script type="text/javascript">
                     console.log(document.querySelector('.ds-thread'));

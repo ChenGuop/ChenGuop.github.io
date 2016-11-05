@@ -7,15 +7,15 @@
 
     
 
-    <title>归档：2016 | Roc</title>
+    <title>关于Spring MVC POST请求 @RequestBody | Roc</title>
     <meta name="author" content="Roc Chen">
     
-    <meta name="description" content="你敲下的每一行代码，都是你渴望成功的标志">
+    <meta name="description" content="关于Spring MVC POST请求 @RequestBody">
     
-    
+    <meta name="keywords" content="Spting MVC,POST请求,AJAX">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="关于Spring MVC POST请求 @RequestBody"/>
     <meta property="og:site_name" content="ChanRoc"/>
 
     
@@ -233,64 +233,115 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/Java/">Java</a><a class="breadcrumb" href="/categories/Java/JavaScript/">JavaScript</a>
+
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>关于Spring MVC POST请求 @RequestBody</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="pink-link-context" datetime="2016-02-28T09:58:27.000Z"><a href="/2016/02/28/2016-02-28-01/">2016-02-28</a></time>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/Spring-MVC/" class="chip pink lighten-1">Spring MVC</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2016
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/2016/11/04/springboot/ch2/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-11-04T03:26:00.000Z">2016-11-04</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Spring Boot实战 --（二）Spring 常用配置
-                            </a>
-                        
-                            <a href="/2016/11/03/springboot/ch1/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-11-03T06:57:00.000Z">2016-11-03</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Spring Boot实战--（一）Spring项目的快速搭建
-                            </a>
-                        
-                            <a href="/2016/10/10/2016-10-10-01/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-10-10T09:58:27.000Z">2016-10-10</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                项目中遇到的技术问题
-                            </a>
-                        
-                            <a href="/2016/08/06/2016-08-06-01/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-08-06T05:45:00.000Z">2016-08-06</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                拍卖会的故事
-                            </a>
-                        
-                            <a href="/2016/02/28/2016-02-28-01/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-02-28T09:58:27.000Z">2016-02-28</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                关于Spring MVC POST请求 @RequestBody
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
+            <a href="/tags/POST请求/" class="chip pink lighten-1">POST请求</a>
         
-    </ul>
+            <a href="/tags/AJAX/" class="chip pink lighten-1">AJAX</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#关于Spring-MVC-POST请求-RequestBody"><span class="section table-of-contents-text">关于Spring MVC POST请求 @RequestBody</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#经过"><span class="section table-of-contents-text">经过</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h2 id="关于Spring-MVC-POST请求-RequestBody"><a href="#关于Spring-MVC-POST请求-RequestBody" class="headerlink" title="关于Spring MVC POST请求 @RequestBody"></a>关于Spring MVC POST请求 @RequestBody</h2><p>在使用Spring MVC 时Ajax发送post请求：<br>本来是要接受一个实体类，但是数据结构比较复杂；自己搞了快一天才弄明白<br><strong>重点：</strong> 在js中json格式要转换成字符串的json格式接受才行 <code>jsonStr = JSON.stringify(jsonStr);</code></p>
+<blockquote>
+<p>实体类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Id</span></div><div class="line"><span class="meta">@GenericGenerator</span>(name = <span class="string">"idgen"</span>, strategy = <span class="string">"increment"</span>)</div><div class="line"><span class="meta">@GeneratedValue</span>(generator = <span class="string">"idgen"</span>)</div><div class="line"><span class="keyword">private</span> Long achieveId; <span class="comment">// 主键</span></div><div class="line"><span class="meta">@OneToOne</span></div><div class="line"><span class="meta">@JoinColumn</span>(name = <span class="string">"MACHINE_TYPE"</span>, updatable = <span class="keyword">false</span>, insertable = <span class="keyword">false</span>)</div><div class="line"><span class="keyword">private</span> MachineType machineType; <span class="comment">// 机型类别</span></div><div class="line"><span class="meta">@Column</span>(name = <span class="string">"MACHINE_TYPE"</span>)</div><div class="line"><span class="keyword">private</span> String machineTypeId; <span class="comment">// 机型类别</span></div><div class="line"><span class="meta">@OneToOne</span></div><div class="line"><span class="meta">@JoinColumn</span>(name = <span class="string">"BRAND_ID"</span>, updatable = <span class="keyword">false</span>, insertable = <span class="keyword">false</span>)</div><div class="line"><span class="keyword">private</span> Brand brand; <span class="comment">// 品牌ID</span></div><div class="line"><span class="meta">@Column</span>(name = <span class="string">"BRAND_ID"</span>)</div><div class="line"><span class="keyword">private</span> String brandId; <span class="comment">// 品牌ID</span></div><div class="line"><span class="meta">@OneToOne</span></div><div class="line"><span class="meta">@JoinColumn</span>(name = <span class="string">"GOOD_ID"</span>, updatable = <span class="keyword">false</span>, insertable = <span class="keyword">false</span>)</div><div class="line"><span class="keyword">private</span> Goods good; <span class="comment">// 型号ID</span></div><div class="line"><span class="meta">@Column</span>(name = <span class="string">"GOOD_ID"</span>)</div><div class="line"><span class="keyword">private</span> String goodId; <span class="comment">// 型号ID</span></div><div class="line"><span class="keyword">private</span> Integer numberFirst; <span class="comment">// 任务量一</span></div><div class="line"><span class="keyword">private</span> Integer numberSecond; <span class="comment">// 任务量2</span></div><div class="line"><span class="keyword">private</span> Integer numberThird; <span class="comment">// 任务量3</span></div><div class="line"><span class="keyword">private</span> Date startDate; <span class="comment">// 开始日期</span></div><div class="line"><span class="keyword">private</span> Date endDate; <span class="comment">// 结束日期</span></div><div class="line"><span class="keyword">private</span> Date issuingDate; <span class="comment">// 提成发放日期</span></div><div class="line"><span class="keyword">private</span> String auditor; <span class="comment">// 审核人</span></div><div class="line"><span class="keyword">private</span> String remark; <span class="comment">// 备注</span></div><div class="line"><span class="keyword">private</span> Date createDate; <span class="comment">// 创建日期</span></div><div class="line"><span class="meta">@Enumerated</span>(EnumType.STRING)</div><div class="line"><span class="keyword">private</span> FlagEnum flag = FlagEnum.NORMAL; <span class="comment">// 是否删除：normal-正常，del-删除</span></div><div class="line"><span class="meta">@Enumerated</span>(EnumType.STRING)</div><div class="line"><span class="keyword">private</span> AchieveStatusEnum status = AchieveStatusEnum.WAIT; <span class="comment">// 审核状态：BACK-驳回，WAIT-待审核，OVER-已审核</span></div><div class="line"><span class="keyword">private</span> String planId;</div><div class="line"></div><div class="line"><span class="meta">@OneToMany</span>(cascade=CascadeType.ALL)</div><div class="line"><span class="meta">@JoinTable</span>(name=<span class="string">"SYS_ACHIEVE_SET_RULE"</span>,</div><div class="line">   joinColumns=<span class="meta">@JoinColumn</span>(name=<span class="string">"SYS_ACHIEVE_ID"</span>),</div><div class="line">   inverseJoinColumns=<span class="meta">@JoinColumn</span>(name=<span class="string">"RULE_ID"</span>))</div><div class="line"><span class="keyword">private</span> List&lt;RewardPunishRule&gt; rewardPunishRules;<span class="comment">//奖罚规则</span></div><div class="line"></div><div class="line"><span class="meta">@OneToMany</span>(cascade=CascadeType.ALL)</div><div class="line"><span class="meta">@JoinTable</span>(name=<span class="string">"SYS_ACHIEVE_SET_GROUP"</span>,</div><div class="line">    joinColumns=<span class="meta">@JoinColumn</span>(name=<span class="string">"SYS_ACHIEVE_ID"</span>),</div><div class="line">    inverseJoinColumns=<span class="meta">@JoinColumn</span>(name=<span class="string">"GROUPING_ID"</span>))</div><div class="line"><span class="keyword">private</span> List&lt;GroupNumber&gt; groupNumbers; <span class="comment">//人员分组设置</span></div></pre></td></tr></table></figure></p>
+<p>controller<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">""</span>, method = RequestMethod.POST)</div><div class="line"><span class="meta">@ResponseBody</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">addAchieve</span><span class="params">(@RequestBody Achieve achieve)</span> </span>&#123;</div><div class="line">  String result = <span class="string">""</span>;</div><div class="line">  System.out.println(achieve);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>js-Ajax</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSubmit</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="comment">//	var jsonStr = $("#achieveForm").serialize();</span></div><div class="line"><span class="comment">//拼凑数据格式</span></div><div class="line">	<span class="keyword">var</span> jsonStr = &#123;</div><div class="line">		<span class="string">'planId'</span>: $(<span class="string">"#achieveForm input[name='planId']"</span>).val(),</div><div class="line">		<span class="string">'machineTypeId'</span> : $(<span class="string">"#achieveForm input[name='machineType']"</span>).val(),</div><div class="line">		<span class="string">'brandId'</span> : $(<span class="string">"#achieveForm .J_brand"</span>).val(),</div><div class="line">		<span class="string">'goodId'</span> : $(<span class="string">"#goodList"</span>).val()</div><div class="line">	&#125;;</div><div class="line"><span class="comment">//============需要转换成字符串的json格式传递参数==============================</span></div><div class="line">	jsonStr = <span class="built_in">JSON</span>.stringify(jsonStr);</div><div class="line"><span class="comment">//=================================</span></div><div class="line"><span class="comment">//	console.log("jsonStr:\r\n" + JSON.stringify(jsonStr));</span></div><div class="line">	<span class="comment">// alert(jsonStr);</span></div><div class="line">	$.ajax(&#123;</div><div class="line">		<span class="attr">url</span> : <span class="string">"/achieve"</span>,</div><div class="line">		<span class="attr">type</span> : <span class="string">"POST"</span>,</div><div class="line">		<span class="attr">contentType</span> : <span class="string">'application/json;charset=utf-8'</span>, <span class="comment">// 设置请求头信息</span></div><div class="line">		dataType : <span class="string">"json"</span>,</div><div class="line">		<span class="attr">data</span> : jsonStr,</div><div class="line">		<span class="attr">success</span> : <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">			alert(data);</div><div class="line">		&#125;,</div><div class="line">		<span class="attr">error</span> : <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">			alert(res.responseText);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="经过"><a href="#经过" class="headerlink" title="经过"></a>经过</h2><blockquote>
+<p>js 缺少一下代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//============需要转换成字符串的json格式传递参数==============================</span></div><div class="line">	jsonStr = <span class="built_in">JSON</span>.stringify(jsonStr);</div><div class="line"><span class="comment">//=================================</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><p>使用map接受数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">""</span>, method = RequestMethod.POST)</div><div class="line"><span class="meta">@ResponseBody</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">addAchieve</span><span class="params">(@RequestBody Map&lt;String, Object&gt; achieve)</span> </span>&#123;</div><div class="line">  String result = <span class="string">""</span>;</div><div class="line">  System.out.println(achieve);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用JSONObject接受数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">""</span>, method = RequestMethod.POST)</div><div class="line"><span class="meta">@ResponseBody</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">addAchieve</span><span class="params">(@RequestBody JSONObject achieve)</span> </span>&#123;</div><div class="line">  String result = <span class="string">""</span>;</div><div class="line">  System.out.println(achieve);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>异常信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[http-nio-8080-exec-9] o.s.w.s.m.s.DefaultHandlerExceptionResolver - Failed to read HTTP message: org.springframework.http.converter.HttpMessageNotReadableException: Could not read document: Unrecognized token &apos;planId&apos;: was expecting (&apos;true&apos;, &apos;false&apos; or &apos;null&apos;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>从chrome 的Postman 发送是可以的我就觉得我的数据格式有问题</p>
+</li>
+</ul>
+<p>决绝办法是就是使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsonStr = <span class="built_in">JSON</span>.stringify(jsonStr);</div></pre></td></tr></table></figure></p>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2016/02/28/2016-02-28-01/" data-title="关于Spring MVC POST请求 @RequestBody" data-url="http://blog.chanroc.top/2016/02/28/2016-02-28-01/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'chanroc'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>
